@@ -1,10 +1,8 @@
 package com.demo.jdk8;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
 /**
  * 
  * @author lee
@@ -21,7 +19,7 @@ public class Test1 {
 		JFrame jFrame = new JFrame();
 		JButton jButton = new JButton("click me");
 		
-		//button 点击事件1112
+		//button 点击事件
 		jButton.addActionListener(new ActionListener() {
 			
 			@Override
