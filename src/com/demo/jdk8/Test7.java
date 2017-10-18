@@ -27,7 +27,7 @@ public class Test7 implements MyInter1, MyInter2{
 		list.sort(Person7::sortByAge);
 		list.forEach(a -> System.out.println(a.getAge()));
 		
-		System.out.println("part2-------------111");
+		System.out.println("part2-------------");
 		SortUtil7 sort = new SortUtil7();
 		list.sort((a,b) -> sort.sortByAge(a, b));
 		list.forEach(a -> System.out.println(a.getAge()));
