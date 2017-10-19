@@ -5,12 +5,15 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+/**
+ * @author Lee
+ */
 public class Test7 implements MyInter1, MyInter2{
 	@Override
 	public void sayHello(){
 		MyInter2.super.sayHello();
 	}
-	
+
 	public static void main(String[] args) {
 		Person7 p1 = new Person7("zhaoda", 25);
 		Person7 p2 = new Person7("wanger",19);
@@ -34,7 +37,7 @@ public class Test7 implements MyInter1, MyInter2{
 		System.out.println("实例方法引用");
 		list.sort(sort::sortByAge);
 		list.forEach(a -> System.out.println(a.getAge()));
-
+		list.forEach(System.out::println);
 		System.out.println("类的实例方法引用");
 		list.sort(Person7::objectSortByAge);
 		list.forEach(a -> System.out.println(a.getAge()));
@@ -52,7 +55,7 @@ public class Test7 implements MyInter1, MyInter2{
 		return supplier.get() + " hello";
 	}
 	public String getString2(String p, Function<String, String> f){
-		return f.apply(p);
+		return f.apply(p) + " hello";
 	}
 }
 
