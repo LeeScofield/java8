@@ -78,5 +78,20 @@ public class Test8Stream {
 
         System.out.println("part9----------------------------");
         Stream.iterate(1,i -> i + 2).limit(3).forEach(System.out::println);
+
+        System.out.println("part10----------------------------");
+        Stream.iterate(1, i -> i + 1).limit(5).skip(2).forEach(System.out::println);
+
+        System.out.println("part11----------------------------");
+        IntStream.of(1,1,3,4,5,6,4).distinct().forEach(System.out::println);
+
+        System.out.println("part12----------------------------");
+        IntStream.of(1,2,3,4,5).max().ifPresent(System.out::println);
+
+        System.out.println("part13----------------------------");
+        IntSummaryStatistics intSummaryStatistics = IntStream.of(1, 2, 3, 4, 5).summaryStatistics();
+        System.out.println(intSummaryStatistics.getMax());
+        System.out.println(intSummaryStatistics.getMin());
+        System.out.println(intSummaryStatistics.getAverage());
     }
 }
