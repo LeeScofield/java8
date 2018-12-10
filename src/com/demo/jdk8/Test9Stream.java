@@ -33,7 +33,6 @@ public class Test9Stream {
         Student s2 = new Student("lisi", 26);
         Student s3 = new Student("wangwu",30);
         Student s4 = new Student("lisi",22);
-
         //根据姓名分组
         List<Student> list3 = Arrays.asList(s1, s2, s3, s4);
         Map<String,List<Student>> map3 = list3.stream().collect(Collectors.groupingBy(Student::getName));
