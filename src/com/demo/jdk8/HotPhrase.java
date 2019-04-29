@@ -15,9 +15,9 @@ public class HotPhrase {
     public static void main(String[] args) throws Exception{
         System.out.println("输入文件绝对路径>>>>>>>>>>>>>>>>>");
 
-        Scanner scanner = new Scanner(System.in);
-        String path = scanner.nextLine();
-//        String path = "C:\\Users\\Lee\\Desktop\\a.txt";
+//        Scanner scanner = new Scanner(System.in);
+//        String path = scanner.nextLine();
+        String path = "C:\\Users\\Lee\\Desktop\\a.txt";
 
         System.out.println("输入高低频次排序(不输为从大小到，输入任意为从小到大)>>>>>>");
         Scanner scanner1 = new Scanner(System.in);
@@ -57,7 +57,7 @@ public class HotPhrase {
         String allText = formatChar(stringBuffer.toString());
 
         //统计单词分组，所有单词都转小写
-        Map<String, Integer> map = Stream.of(allText.split("\\s+")).collect(Collectors.groupingBy(String::toLowerCase, Collectors.summingInt(s-> 1)));
+        Map<String, Integer> map = Stream.of(allText.split("\\s+")).filter(m-> !getExcept().contains(m)).collect(Collectors.groupingBy(String::toLowerCase, Collectors.summingInt(s-> 1)));
 
         Map<String, Integer> sortData =null;
 
@@ -88,6 +88,17 @@ public class HotPhrase {
                 .replace("?", "")
                 .replace(";", "")
                 .replaceAll("\\n+", " ");
+    }
+
+    //例外：查找不包括这些单词
+    public static List getExcept(){
+
+        return new ArrayList(){
+            {
+                add("of");
+                add("the");
+            }
+        };
     }
 
 }
