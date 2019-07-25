@@ -15,9 +15,9 @@ public class HotPhrase {
     public static void main(String[] args) throws Exception{
         System.out.println("输入文件绝对路径>>>>>>>>>>>>>>>>>");
 
-//        Scanner scanner = new Scanner(System.in);
-//        String path = scanner.nextLine();
-        String path = "C:\\Users\\Lee\\Desktop\\a.txt";
+        Scanner scanner = new Scanner(System.in);
+        String path = scanner.nextLine();
+//        String path = "C:\\Users\\Lee\\Desktop\\a.txt";
 
         System.out.println("输入高低频次排序(不输为从大小到，输入任意为从小到大)>>>>>>");
         Scanner scanner1 = new Scanner(System.in);

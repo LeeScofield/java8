@@ -31,7 +31,7 @@ public class Test13 {
 //        getCustomer(intConsumer);
         getCustomer(intConsumer::accept); //函数式方式传参
         /**
-         * 以面象对象的方法传参，由于Consumer和IntConsumer无继续关系，所以getCustomer(intConsumer);会报错
+         * 以面象对象的方法传参，由于Consumer和IntConsumer无继承关系，所以getCustomer(intConsumer);会报错
          * 如果像getCustomer中传入的参数是一种行为的话，编译器认为它是通过的，因为传入的这种行为会符合lambda表达式的要求
          */
 
